@@ -15,6 +15,35 @@
       },
       "uniqueItems": true,
       "type": "array"
+    },
+    "target_chances": {
+      "additionalProperties": {
+        "minimum": 0,
+        "type": "integer"
+      },
+      "type": "object"
+    },
+    "target_tag_chances": {
+      "$ref": "#/$defs/target_chances",
+      "propertyNames": {
+        "$ref": "/lewdowl/dscs-json-schema/main/schema/const.json#/$defs/event_tag"
+      }
+    },
+    "xp_modifiers": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/multiplier"
+        },
+        {
+          "propertyNames": {
+            "$ref": "/lewdowl/dscs-json-schema/main/schema/const.json#/$defs/bot_skill"
+          },
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/$defs/multiplier"
+          }
+        }
+      ]
     }
   },
   "$id": "https://raw.githubusercontent.com/lewdowl/dscs-json-schema/main/schema/misc.json",

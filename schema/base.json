@@ -32,6 +32,12 @@
         "$ref": "/lewdowl/dscs-json-schema/main/schema/model.json"
       },
       "type": "array"
+    },
+    "bot_parts": {
+      "items": {
+        "$ref": "/lewdowl/dscs-json-schema/main/schema/part.json"
+      },
+      "type": "array"
     }
   },
   "required": [

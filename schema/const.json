@@ -11,6 +11,25 @@
         "bot_social"
       ]
     },
+    "skill": {
+      "enum": [
+        "combat",
+        "computers",
+        "electronics",
+        "mechanics",
+        "sex",
+        "social"
+      ]
+    },
+    "event_tag": {
+      "enum": [
+        "all",
+        "cheap",
+        "nice",
+        "good",
+        "luxury"
+      ]
+    },
     "rating": {
       "default": "F",
       "enum": [

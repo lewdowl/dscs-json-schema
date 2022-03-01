@@ -1,16 +1,4 @@
 {
-  "$defs": {
-    "target_chances": {
-      "additionalProperties": {
-        "minimum": 0,
-        "type": "integer"
-      },
-      "propertyNames": {
-        "$ref": "/lewdowl/dscs-json-schema/main/schema/misc.json#/$defs/non_empty_string"
-      },
-      "type": "object"
-    }
-  },
   "$id": "https://raw.githubusercontent.com/lewdowl/dscs-json-schema/main/schema/model.json",
   "$schema": "http://json-schema.org/draft-07/schema",
   "properties": {
@@ -78,10 +66,10 @@
       "type": "object"
     },
     "list_target_chances": {
-      "$ref": "#/$defs/target_chances"
+      "$ref": "/lewdowl/dscs-json-schema/main/schema/misc.json#/$defs/target_chances"
     },
     "list_target_tag_chances": {
-      "$ref": "#/$defs/target_chances"
+      "$ref": "/lewdowl/dscs-json-schema/main/schema/misc.json#/$defs/target_tag_chances"
     },
     "generate_bot_mind_table": {
       "anyOf": [
@@ -122,6 +110,9 @@
       "default": "default",
       "description": "set to default in order for events to be able to determine start xp.\n otherwise, make it an array of entries where each entry specifies a min and max xp amount that a bot of this model can start with in the entry-specified skill (negative values translates to not knowing the skill at all)",
       "title": "determine how much skill xp bots of this model should have upon generation"
+    },
+    "xp_mult": {
+      "$ref": "/lewdowl/dscs-json-schema/main/schema/misc.json#/$defs/xp_modifiers"
     }
   },
   "required": [
