@@ -1,0 +1,79 @@
+{
+    "$defs": {
+        "target_chances": {
+            "additionalProperties": { "minimum": 0, "type": "integer" },
+            "propertyNames": { "$ref": "/lewdowl/dscs-json-schema/main/schema/misc.json#/$defs/non_empty_string" },
+            "type": "object"
+        }
+    },
+    "$id": "https://raw.githubusercontent.com/lewdowl/dscs-json-schema/main/schema/model.json",
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "properties": {
+        "model_id": { "$ref": "/lewdowl/dscs-json-schema/main/schema/misc.json#/$defs/non_empty_string", "title": "unique identifier" },
+        "model_name": { "title": "the name of this bot model", "type": "string" },
+        "model_description": { "title": "short description of the model", "type":  "string" },
+        "name_variants": {
+            "anyOf": [
+                { "type": "string" },
+                { "items": { "type": "string" }, "type": "array" }
+            ],
+            "title": "array of possible names or reference to a name table"
+        },
+        "gender": { "default": "female", "enum": [ "female", "male" ] },
+        "rate": { "$ref": "/lewdowl/dscs-json-schema/main/schema/misc.json#/$defs/rating" },
+        "price_mult": { "$ref": "/lewdowl/dscs-json-schema/main/schema/misc.json#/$defs/multiplier" },
+        "psychocore_stability_decay_mult": { "$ref": "/lewdowl/dscs-json-schema/main/schema/misc.json#/$defs/multiplier" },
+        "part_damage_mult": { "$ref": "/lewdowl/dscs-json-schema/main/schema/misc.json#/$defs/multiplier" },
+        "default_traits": {
+            "items": { "$ref": "/lewdowl/dscs-json-schema/main/schema/misc.json#/$defs/trait" },
+            "title": "traits that will always be present on a bot of this model",
+            "type": "array"            
+        },
+        "default_parts": {
+            "additionalProperties": { 
+                "$ref": "/lewdowl/dscs-json-schema/main/schema/misc.json#/$defs/non_empty_string",
+                "title": "slot identifier: part identifer"
+            },
+            "minProperties": 1,
+            "propertyNames": { "$ref": "/lewdowl/dscs-json-schema/main/schema/misc.json#/$defs/non_empty_string"},
+            "title": "the default parts that bots of this model will have (also defines the slot composition)",
+            "description": "slots must be assigned is such a way that the union of all slot tags contains 'cpu' and 'powercore'",
+            "type": "object"
+        },
+        "list_target_chances": { "$ref": "#/$defs/target_chances" },
+        "list_target_tag_chances": { "$ref": "#/$defs/target_chances" },
+        "generate_bot_mind_table": {
+            "anyOf": [
+                { "const": "default"},
+                {
+                    "items": {
+                        "additionalItems": false,
+                        "items": [
+                            {
+                                "$ref": "/lewdowl/dscs-json-schema/main/schema/misc.json#/$defs/non_empty_string",
+                                "title": "skill identifier e.g. 'bot_combat'"
+                            },
+                            {
+                                "additionalItems": false,
+                                "items": [
+                                    { "title": "minimum xp", "type": "number" },
+                                    { "title": "maximum xp", "type": "number" }
+                                ],
+                                "minItems": 2,
+                                "title": "skill xp distribution",
+                                "type": "array"
+                            }
+                        ],
+                        "minItems": 2,
+                        "type": "array"
+                    },
+                    "type": "array"
+                }
+            ],
+            "default": "default",
+            "description": "set to default in order for events to be able to determine start xp.\n otherwise, make it an array of entries where each entry specifies a min and max xp amount that a bot of this model can start with in the entry-specified skill (negative values translates to not knowing the skill at all)",
+            "title": "determine how much skill xp bots of this model should have upon generation"
+        }
+    },
+    "required": [ "model_id", "default_parts" ]
+}

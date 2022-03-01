@@ -1,0 +1,10 @@
+{
+    "$defs": {
+        "multiplier": { "default": 1.0, "minimum": 0.0, "type": "number" },
+        "rating": { "default": "F", "enum": ["S", "A", "B", "C", "D", "E", "F"] },
+        "trait": { "enum": ["tech_smart", "sex_smart"] },
+        "non_empty_string": { "minLength": 1, "type": "string" }
+    },
+    "$id": "https://raw.githubusercontent.com/lewdowl/dscs-json-schema/main/schema/misc.json",
+    "$schema": "http://json-schema.org/draft-07/schema"
+}

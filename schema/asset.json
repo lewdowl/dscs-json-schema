@@ -1,0 +1,19 @@
+{
+    "$id": "https://raw.githubusercontent.com/lewdowl/dscs-json-schema/main/schema/asset.json",
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "additionalProperties": false,
+    "items": 
+        {
+            "items": [
+                { "title": "game location", "type": "string" },
+                { "title": "where in the mod folder the relevant assets are located (replace underscores and path separators with whitespace)", "type": "string" }
+            ],
+            "maxItems": 2,
+            "minItems": 2,
+            "type": "array"
+        }
+    ,
+    "required": [ "mod_id" ],
+    "title": "map mod assets to the relevant game location",
+    "type": "array"
+}

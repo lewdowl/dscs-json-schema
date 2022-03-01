@@ -1,0 +1,1 @@
+# (**WIP**) json schema for dscs mods 
