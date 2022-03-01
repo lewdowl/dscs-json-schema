@@ -14,18 +14,19 @@
         "model_description": { "title": "short description of the model", "type":  "string" },
         "name_variants": {
             "anyOf": [
-                { "type": "string" },
-                { "items": { "type": "string" }, "type": "array" }
+                { "$ref": "/lewdowl/dscs-json-schema/main/schema/misc.json#/$defs/non_empty_string" },
+                { "$ref": "/lewdowl/dscs-json-schema/main/schema/misc.json#/$defs/unique_string_array" }
             ],
             "title": "array of possible names or reference to a name table"
         },
         "gender": { "default": "female", "enum": [ "female", "male" ] },
-        "rate": { "$ref": "/lewdowl/dscs-json-schema/main/schema/misc.json#/$defs/rating" },
+        "rate": { "$ref": "/lewdowl/dscs-json-schema/main/schema/const.json#/$defs/rating" },
         "price_mult": { "$ref": "/lewdowl/dscs-json-schema/main/schema/misc.json#/$defs/multiplier" },
         "psychocore_stability_decay_mult": { "$ref": "/lewdowl/dscs-json-schema/main/schema/misc.json#/$defs/multiplier" },
         "part_damage_mult": { "$ref": "/lewdowl/dscs-json-schema/main/schema/misc.json#/$defs/multiplier" },
         "default_traits": {
-            "items": { "$ref": "/lewdowl/dscs-json-schema/main/schema/misc.json#/$defs/trait" },
+            "items": { "$ref": "/lewdowl/dscs-json-schema/main/schema/const.json#/$defs/trait" },
+            "uniqueItems": true,
             "title": "traits that will always be present on a bot of this model",
             "type": "array"            
         },
@@ -50,7 +51,7 @@
                         "additionalItems": false,
                         "items": [
                             {
-                                "$ref": "/lewdowl/dscs-json-schema/main/schema/misc.json#/$defs/non_empty_string",
+                                "$ref": "/lewdowl/dscs-json-schema/main/schema/const.json#/$defs/bot_skill",
                                 "title": "skill identifier e.g. 'bot_combat'"
                             },
                             {

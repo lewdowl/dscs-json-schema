@@ -10,10 +10,7 @@
             "$ref": "/lewdowl/dscs-json-schema/main/schema/asset.json"
         },
         "name_tables": {
-            "additionalProperties": {
-                "items": { "type": "string" },
-                "type": "array"
-            },
+            "additionalProperties": { "$ref": "/lewdowl/dscs-json-schema/main/schema/misc.json#/$defs/unique_string_array" },
             "propertyNames": { "type": "string" },
             "type": "object"
         },

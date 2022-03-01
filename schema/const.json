@@ -1,0 +1,29 @@
+{
+    "$defs": {
+        "bot_skill": {
+            "$comment": "same reason for enum as with trait (regex: ^bot_(combat|computers|electronics|mechanics|sex|social)$)",
+            "enum": ["bot_combat", "bot_computers", "bot_electronics", "bot_mechanics", "bot_sex", "bot_social"]
+        },
+        "rating": { "default": "F", "enum": ["S", "A", "B", "C", "D", "E", "F"] },
+        "trait": {
+            "$comment": "use enum instead of regex in order to get code completition (regex: ^(combat|sex|social|tech)_(dumb|smart|smart_inherent)$)",
+            "enum": [
+                "combat_smart",
+                "combat_smart_inherent",
+                "combat_dumb",
+                "sex_smart",
+                "sex_smart_inherent",
+                "sex_dumb",
+                "social_smart",
+                "social_smart_inherent",
+                "social_dumb",
+                "tech_smart",
+                "tech_smart_inherent",
+                "tech_dumb"
+            ]
+        },
+        
+    },
+    "$id": "https://raw.githubusercontent.com/lewdowl/dscs-json-schema/main/schema/const.json",
+    "$schema": "http://json-schema.org/draft-07/schema"
+}
