@@ -1,0 +1,87 @@
+{
+  "$id": "https://raw.githubusercontent.com/lewdowl/dscs-json-schema/main/schema/part.json",
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "$ref": "/lewdowl/dscs-json-schema/main/schema/misc.json#/$defs/non_empty_string"
+    },
+    "name": {
+      "$ref": "/lewdowl/dscs-json-schema/main/schema/misc.json#/$defs/non_empty_string"
+    },
+    "description": {
+      "$ref": "/lewdowl/dscs-json-schema/main/schema/misc.json#/$defs/non_empty_string"
+    },
+    "rate": {
+      "$ref": "/lewdowl/dscs-json-schema/main/schema/const.json#/$defs/rating"
+    },
+    "price_mult": {
+      "$ref": "/lewdowl/dscs-json-schema/main/schema/misc.json#/$defs/multiplier"
+    },
+    "slot": {
+      "$ref": "/lewdowl/dscs-json-schema/main/schema/misc.json#/$defs/non_empty_string"
+    },
+    "damage_mult": {
+      "$ref": "/lewdowl/dscs-json-schema/main/schema/misc.json#/$defs/multiplier"
+    },
+    "difficulty": {
+      "$ref": "/lewdowl/dscs-json-schema/main/schema/misc.json#/$defs/multiplier"
+    },
+    "repair_skills": {
+      "type": "array",
+      "items": {
+        "items": [
+          {
+            "$ref": "/lewdowl/dscs-json-schema/main/schema/const.json#/$defs/skill"
+          },
+          {
+            "minimum": 0,
+            "type": "integer"
+          }
+        ],
+        "type": "array"
+      }
+    },
+    "list_target_chances": {
+      "$ref": "/lewdowl/dscs-json-schema/main/schema/misc.json#/$defs/target_chances"
+    },
+    "list_target_tag_chances": {
+      "$ref": "/lewdowl/dscs-json-schema/main/schema/misc.json#/$defs/target_tag_chances"
+    },
+    "possible_defects": {
+      "items": {
+        "additionalItems": false,
+        "items": [
+          {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "/lewdowl/dscs-json-schema/main/schema/misc.json#/$defs/non_empty_string"
+              }
+            ]
+          },
+          {
+            "minimum": 0,
+            "type": "integer"
+          },
+          {
+            "minimum": 0,
+            "type": "integer"
+          }
+        ],
+        "minItems": 3,
+        "type": "array"
+      },
+      "type": "array"
+    },
+    "xp_mult": {
+      "$ref": "/lewdowl/dscs-json-schema/main/schema/misc.json#/$defs/xp_modifiers"
+    }
+  },
+  "required": [
+    "id",
+    "slot"
+  ]
+}
