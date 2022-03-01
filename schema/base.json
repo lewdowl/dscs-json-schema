@@ -16,6 +16,10 @@
             },
             "propertyNames": { "type": "string" },
             "type": "object"
+        },
+        "bot_models": {
+            "items": { "$ref": "/lewdowl/dscs-json-schema/main/schema/model.json"},
+            "type": "array"
         }
     },
     "required": [ "mod_id" ],
