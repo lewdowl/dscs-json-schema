@@ -21,6 +21,22 @@
         "social"
       ]
     },
+    "slot_tag": {
+      "enum": [
+        "cpu",
+        "powercore"
+      ]
+    },
+    "event_damage": {
+      "enum": [
+        "training_combat",
+        "training_computers",
+        "training_electronics",
+        "training_mechanics",
+        "training_sex",
+        "training_social"
+      ]
+    },
     "event_tag": {
       "enum": [
         "all",

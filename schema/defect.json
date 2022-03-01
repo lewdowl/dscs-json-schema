@@ -1,0 +1,42 @@
+{
+  "$id": "https://raw.githubusercontent.com/lewdowl/dscs-json-schema/main/schema/defect.json",
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "$ref": "/lewdowl/dscs-json-schema/main/schema/misc.json#/$defs/non_empty_string"
+    },
+    "name": {
+      "$ref": "/lewdowl/dscs-json-schema/main/schema/misc.json#/$defs/non_empty_string"
+    },
+    "description": {
+      "$ref": "/lewdowl/dscs-json-schema/main/schema/misc.json#/$defs/non_empty_string"
+    },
+    "can_apply_multiple": {
+      "type": "boolean"
+    },
+    "part_price_mult": {
+      "$ref": "/lewdowl/dscs-json-schema/main/schema/misc.json#/$defs/multiplier"
+    },
+    "difficulty": {
+      "$ref": "/lewdowl/dscs-json-schema/main/schema/misc.json#/$defs/multiplier"
+    },
+    "repairable": {
+      "type": "boolean"
+    },
+    "disabling": {
+      "type": "boolean"
+    },
+    "fix_requirements": {
+      "$comment": "currently not in use",
+      "type": "array",
+      "maxItems": 0
+    },
+    "destroyed": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "id"
+  ]
+}

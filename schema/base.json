@@ -38,6 +38,18 @@
         "$ref": "/lewdowl/dscs-json-schema/main/schema/part.json"
       },
       "type": "array"
+    },
+    "bot_part_slots": {
+      "items": {
+        "$ref": "/lewdowl/dscs-json-schema/main/schema/slot.json"
+      },
+      "type": "array"
+    },
+    "bot_part_defects": {
+      "items": {
+        "$ref": "/lewdowl/dscs-json-schema/main/schema/defect.json"
+      },
+      "type": "array"
     }
   },
   "required": [
