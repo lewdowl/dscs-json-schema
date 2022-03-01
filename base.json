@@ -7,7 +7,7 @@
         "mod_description": { "title": "description of the mod that will be shown in the game", "type": "string" },
         "mod_priority": { "title": "determines where in the load order the mod will be placed (mods with small values are loaded before those with large values)", "type": "integer" },
         "asset_packs": {
-            "$ref": "/main/asset.json"
+            "$ref": "/lewdowl/dscs-json-schema/main/asset.json"
         }
     },
     "required": [ "mod_id" ],
