@@ -1,9 +1,22 @@
 {
-    "$defs": {
-        "multiplier": { "default": 1.0, "minimum": 0.0, "type": "number" },
-        "non_empty_string": { "minLength": 1, "type": "string" },
-        "unique_string_array": { "items": { "$ref": "#/$defs/non_empty_string" }, "uniqueItems": true, "type": "array" },
+  "$defs": {
+    "multiplier": {
+      "default": 1.0,
+      "minimum": 0.0,
+      "type": "number"
     },
-    "$id": "https://raw.githubusercontent.com/lewdowl/dscs-json-schema/main/schema/misc.json",
-    "$schema": "http://json-schema.org/draft-07/schema"
+    "non_empty_string": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "unique_string_array": {
+      "items": {
+        "$ref": "#/$defs/non_empty_string"
+      },
+      "uniqueItems": true,
+      "type": "array"
+    }
+  },
+  "$id": "https://raw.githubusercontent.com/lewdowl/dscs-json-schema/main/schema/misc.json",
+  "$schema": "http://json-schema.org/draft-07/schema"
 }

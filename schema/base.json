@@ -1,24 +1,41 @@
 {
-    "$id": "https://raw.githubusercontent.com/lewdowl/dscs-json-schema/main/schema/base.json",
-    "$schema": "http://json-schema.org/draft-07/schema",
-    "additionalProperties": false,
-    "properties": {
-        "mod_id": { "title": "unique identifier of the mod", "type": "string" },
-        "mod_description": { "title": "description of the mod that will be shown in the game", "type": "string" },
-        "mod_priority": { "title": "determines where in the load order the mod will be placed (mods with small values are loaded before those with large values)", "type": "integer" },
-        "asset_packs": {
-            "$ref": "/lewdowl/dscs-json-schema/main/schema/asset.json"
-        },
-        "name_tables": {
-            "additionalProperties": { "$ref": "/lewdowl/dscs-json-schema/main/schema/misc.json#/$defs/unique_string_array" },
-            "propertyNames": { "type": "string" },
-            "type": "object"
-        },
-        "bot_models": {
-            "items": { "$ref": "/lewdowl/dscs-json-schema/main/schema/model.json"},
-            "type": "array"
-        }
+  "$id": "https://raw.githubusercontent.com/lewdowl/dscs-json-schema/main/schema/base.json",
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "additionalProperties": false,
+  "properties": {
+    "mod_id": {
+      "title": "unique identifier of the mod",
+      "type": "string"
     },
-    "required": [ "mod_id" ],
-    "type": "object"
+    "mod_description": {
+      "title": "description of the mod that will be shown in the game",
+      "type": "string"
+    },
+    "mod_priority": {
+      "title": "determines where in the load order the mod will be placed (mods with small values are loaded before those with large values)",
+      "type": "integer"
+    },
+    "asset_packs": {
+      "$ref": "/lewdowl/dscs-json-schema/main/schema/asset.json"
+    },
+    "name_tables": {
+      "additionalProperties": {
+        "$ref": "/lewdowl/dscs-json-schema/main/schema/misc.json#/$defs/unique_string_array"
+      },
+      "propertyNames": {
+        "type": "string"
+      },
+      "type": "object"
+    },
+    "bot_models": {
+      "items": {
+        "$ref": "/lewdowl/dscs-json-schema/main/schema/model.json"
+      },
+      "type": "array"
+    }
+  },
+  "required": [
+    "mod_id"
+  ],
+  "type": "object"
 }
