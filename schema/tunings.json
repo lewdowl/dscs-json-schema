@@ -1,0 +1,89 @@
+{
+  "$id": "https://raw.githubusercontent.com/lewdowl/dscs-json-schema/main/schema/tunings.json",
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$comment": "lots of repition in order for code completion to work in editors",
+  "additionalProperties": false,
+  "properties": {
+    "netconsole_entry_points": {
+      "items": {
+        "$ref": "/lewdowl/dscs-json-schema/main/schema/misc.json#/$defs/non_empty_string"
+      },
+      "type": "array"
+    },
+    "system_mods_priority_threshold": {
+      "type": "integer"
+    },
+    "easy_difficulty_char_points": {
+      "minimum": 0,
+      "type": "integer"
+    },
+    "normal_difficulty_char_points": {
+      "minimum": 0,
+      "type": "integer"
+    },
+    "hard_difficulty_char_points": {
+      "minimum": 0,
+      "type": "integer"
+    },
+    "hardcore_difficulty_char_points": {
+      "minimum": 0,
+      "type": "integer"
+    },
+    "easy_difficulty_debt": {
+      "items": {
+        "minimum": 0,
+        "type": "integer"
+      },
+      "type": "array"
+    },
+    "normal_difficulty_debt": {
+      "items": {
+        "minimum": 0,
+        "type": "integer"
+      },
+      "type": "array"
+    },
+    "hard_difficulty_debt": {
+      "items": {
+        "minimum": 0,
+        "type": "integer"
+      },
+      "type": "array"
+    },
+    "hardcore_difficulty_debt": {
+      "items": {
+        "minimum": 0,
+        "type": "integer"
+      },
+      "type": "array"
+    },
+    "easy_difficulty_debt_payments": {
+      "items": {
+        "minimum": 0,
+        "type": "integer"
+      },
+      "type": "array"
+    },
+    "normal_difficulty_debt_payments": {
+      "items": {
+        "minimum": 0,
+        "type": "integer"
+      },
+      "type": "array"
+    },
+    "hard_difficulty_debt_payments": {
+      "items": {
+        "minimum": 0,
+        "type": "integer"
+      },
+      "type": "array"
+    },
+    "hardcore_difficulty_debt_payments": {
+      "items": {
+        "minimum": 0,
+        "type": "integer"
+      },
+      "type": "array"
+    }
+  }
+}

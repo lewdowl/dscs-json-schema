@@ -50,6 +50,15 @@
         "$ref": "/lewdowl/dscs-json-schema/main/schema/defect.json"
       },
       "type": "array"
+    },
+    "dscs_tunings": {
+      "$ref": "/lewdowl/dscs-json-schema/main/schema/tunings.json"
+    },
+    "grey_market_offers": {
+      "items": {
+        "$ref": "/lewdowl/dscs-json-schema/main/schema/grey_market_offer.json"
+      },
+      "type": "array"
     }
   },
   "required": [

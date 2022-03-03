@@ -1,0 +1,47 @@
+{
+  "$id": "https://raw.githubusercontent.com/lewdowl/dscs-json-schema/main/schema/grey_market_offer.json",
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "$ref": "/lewdowl/dscs-json-schema/main/schema/misc.json#/$defs/non_empty_string"
+    },
+    "category": {
+      "$ref": "/lewdowl/dscs-json-schema/main/schema/misc.json#/$defs/non_empty_string"
+    },
+    "title": {
+      "oneOf": [
+        {
+          "$ref": "/lewdowl/dscs-json-schema/main/schema/misc.json#/$defs/non_empty_string"
+        },
+        {
+          "items": {
+            "$ref": "/lewdowl/dscs-json-schema/main/schema/misc.json#/$defs/non_empty_string"
+          },
+          "type": "array"
+        }
+      ]
+    },
+    "chance": {
+      "minimum": 0,
+      "type": "integer"
+    },
+    "duration": {
+      "minimum": 0,
+      "type": "integer"
+    },
+    "cooldown": {
+      "items": {
+        "minimum": 0,
+        "type": "integer"
+      },
+      "minItems": 2,
+      "maxItems": 2,
+      "type": "array"
+    }
+  },
+  "type": "object",
+  "required": [
+    "id"
+  ]
+}
