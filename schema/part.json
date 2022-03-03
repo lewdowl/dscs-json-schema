@@ -21,8 +21,16 @@
     "slot": {
       "$ref": "/lewdowl/dscs-json-schema/main/schema/misc.json#/$defs/non_empty_string"
     },
+    "power_consumption": {
+      "$comment": "only for parts that have slots tagged with 'powercore'?",
+      "type": "integer"
+    },
     "damage_mult": {
       "$ref": "/lewdowl/dscs-json-schema/main/schema/misc.json#/$defs/multiplier"
+    },
+    "damage_on_remove": {
+      "$comment": "currently only used on one vanilla part ('ecoskin'). not sure if it's actually in use",
+      "type": "integer"
     },
     "difficulty": {
       "$ref": "/lewdowl/dscs-json-schema/main/schema/misc.json#/$defs/multiplier"
